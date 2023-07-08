@@ -30,4 +30,17 @@ def predict():
     text = input()
 
     x = torch.from_numpy(convertToArray(text)).repeat(32,1,1).reshape(32,128,1).to('cuda')
-    print("Result: " + str(torch.argmax(CNN(x))))
+    result = "you seem to not have any illness"
+
+    ouput = torch.argmax(CNN(x)).item()
+
+    if ouput == 1:
+        result = "it seems like you intolorante to lactose"
+    elif ouput == 2:
+        result = "it seems like you have cancer"
+    elif ouput == 3:
+        result = "it seems like you have autismus"
+
+    print("Result: " + result)
+
+predict()

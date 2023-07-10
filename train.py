@@ -25,7 +25,8 @@ class GAN():
             for _iter, data in enumerate(self.dataLoader):
                 sequence, labels = data
                 
-                sequence = sequence.reshape(1,128,1).to(self.args.device)
+                sequence = sequence.reshape(32,128,1)
+                sequence = sequence.to(self.args.device)
                 labels = labels.to(self.args.device)
              
                 outputs = self.cnn(sequence)
@@ -40,7 +41,7 @@ class GAN():
         torch.save({'CNN': self.cnn.state_dict()}, 'models.pt')
 
         text = input()
-        x = torch.from_numpy(self.convertToArray(text)).reshape(1,128,1).to(self.args.device)
+        x = torch.from_numpy(self.convertToArray(text)).repeat(32,1,1).reshape(32,128,1).to(self.args.device)
         print(torch.argmax(self.cnn(x)))
         print("Finished Training")
 

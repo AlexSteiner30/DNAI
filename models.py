@@ -15,7 +15,7 @@ class CNN(nn.Module):
             nn.ReLU(),
 
             nn.Flatten(), 
-            nn.Linear(16, 3)  
+            nn.Linear(16, 4)  
         )
     def forward(self, x):
         x = self.main(x)

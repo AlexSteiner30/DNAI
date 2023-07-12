@@ -30,4 +30,4 @@ def predict():
     text = input()
 
     x = torch.from_numpy(convertToArray(text)).repeat(32,1,1).reshape(32,128,1).to('cuda')
-    print(torch.argmax(CNN(x)))
+    print("Result: " + str(torch.argmax(CNN(x))))

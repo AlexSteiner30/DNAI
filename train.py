@@ -25,7 +25,7 @@ class GAN():
             for _iter, data in enumerate(self.dataLoader):
                 sequence, labels = data
                 
-                sequence = sequence.reshape(32,128,1)
+                sequence = sequence.reshape(32,1024,1)
                 sequence = sequence.to(self.args.device)
                 labels = labels.to(self.args.device)
              

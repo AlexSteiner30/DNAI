@@ -5,6 +5,15 @@ class CNN(nn.Module):
     def __init__(self):
         super(CNN, self).__init__()
         self.main = nn.Sequential(
+            nn.Conv1d(1024, 512, 1), 
+            nn.ReLU(),
+
+            nn.Conv1d(512, 256, 1), 
+            nn.ReLU(),
+
+            nn.Conv1d(256, 128, 1), 
+            nn.ReLU(),
+
             nn.Conv1d(128, 64, 1), 
             nn.ReLU(),
 

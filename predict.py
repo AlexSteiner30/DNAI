@@ -29,7 +29,7 @@ def predict():
     print("DNA sequence: ")
     text = input()
 
-    x = torch.from_numpy(convertToArray(text)).repeat(32,1,1).reshape(32,128,1).to('cuda')
+    x = torch.from_numpy(convertToArray(text)).repeat(32,1,1).reshape(32,1024,1).to('cuda')
     result = "you seem to not have any illness"
 
     ouput = torch.argmax(CNN(x)).item()

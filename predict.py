@@ -30,7 +30,7 @@ def predict():
     text = input()
 
     x = torch.from_numpy(convertToArray(text)).repeat(32,1,1).reshape(32,8192,1).to('cuda')
-    result = "you seem to not have any illness"
+    result = "you seem to not have any diseases"
 
     ouput = torch.argmax(CNN(x)).item()
 

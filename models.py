@@ -4,28 +4,17 @@ import torch.nn as nn
 class CNN(nn.Module):
     def __init__(self):
         super(CNN, self).__init__()
-        self.main = nn.Sequential(
-            nn.Conv1d(1024, 512, 1), 
-            nn.ReLU(),
+        self.seq = [1024, 512, 256, 128, 64, 32]
+        self.main = nn.Sequential()
 
-            nn.Conv1d(512, 256, 1), 
-            nn.ReLU(),
+        for i in self.seq:
+            i = int(i)
+            self.main.append(nn.Conv1d(i,int(i / 2), 1))
+            self.main.append(nn.ReLU())
+        
+        self.main.append(nn.Flatten())
+        self.main.append(nn.Linear(16, 4))
 
-            nn.Conv1d(256, 128, 1), 
-            nn.ReLU(),
-
-            nn.Conv1d(128, 64, 1), 
-            nn.ReLU(),
-
-            nn.Conv1d(64, 32, 1), 
-            nn.ReLU(),
-
-            nn.Conv1d(32, 16, 1), 
-            nn.ReLU(),
-
-            nn.Flatten(), 
-            nn.Linear(16, 4)  
-        )
     def forward(self, x):
         x = self.main(x)
         return x

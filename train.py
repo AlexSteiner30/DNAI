@@ -17,7 +17,7 @@ class GAN():
         self.cnn = CNN()
         
         self.criterion = torch.nn.CrossEntropyLoss()
-        self.optimizer = torch.optim.Adam(self.cnn.parameters(), lr=0.001, weight_decay=0.01)
+        self.optimizer = torch.optim.Adam(self.cnn.parameters(), lr=self.args.lr, weight_decay=self.args.weight_decay)
 
         self.dataLoader = torch.utils.data.DataLoader(self.data, batch_size=args.batch_size, shuffle=True)
         print("Training Dataset : {} prepared.".format(len(self.data)))
@@ -25,9 +25,6 @@ class GAN():
         print("Network prepared.")
 
     def run(self):      
-        G_losses = []
-        D_losses = []
-
         for epoch in range(args.epochs):
             for _iter, data in enumerate(self.dataLoader):
                 sequence, labels = data
@@ -43,16 +40,6 @@ class GAN():
                 train_loss += loss.item()
 
         torch.save({'G_state_dict': self.G.state_dict()}, '../TrainedModels/' + args.type + '.pt')
-
-        plt.figure(figsize=(10,5))
-        plt.title("Generator and Discriminator Loss During Training")
-        plt.plot(G_losses,label="G")
-        plt.plot(D_losses,label="D")
-        plt.xlabel("Iterations")
-        plt.ylabel("Loss")
-        plt.legend()
-        plt.savefig("graph.png")
-        #plt.show()
 
 if __name__ == '__main__':
     args = Arguments().parser().parse_args()

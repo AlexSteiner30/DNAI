@@ -5,7 +5,7 @@ class Arguments:
     def __init__(self):
         self._parser = argparse.ArgumentParser()
         
-        self._parser.add_argument('--batch_size', type=int, default=13, help='Integer value for batch size.')
+        self._parser.add_argument('--batch_size', type=int, default=1, help='Integer value for batch size.')
         
         self._parser.add_argument('--gpu', type=int, default=0, help='GPU number to use.')
         self._parser.add_argument('--epochs', type=int, default=2001, help='Integer value for epochs.')

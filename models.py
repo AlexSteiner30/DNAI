@@ -8,13 +8,10 @@ class CNN(nn.Module):
             nn.Conv1d(128, 64, 1, bias=False),
             nn.LeakyReLU(negative_slope=0.2),
 
-            nn.Conv1d(128, 64, 1, bias=False),
-            nn.LeakyReLU(negative_slope=0.2),
-
             nn.Conv1d(64, 32, 1, bias=False),
             nn.LeakyReLU(negative_slope=0.2),
 
-            nn.MaxPool1d(kernel_size=(2, 2)),
+            nn.MaxPool1d(kernel_size=1),
             nn.Flatten(),
 
             nn.Linear(32, 16),

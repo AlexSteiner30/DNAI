@@ -30,7 +30,7 @@ class LoadDataset(data.Dataset):
             else:
                 sequence.append(3)
 
-        return np.array(sequence)
+        return np.array(sequence, dtype=np.float32)
   
     def __getitem__(self, idx):
         sequence = torch.tensor(self.sequences[idx])

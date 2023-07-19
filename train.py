@@ -14,6 +14,11 @@ class GAN():
         self.args = args
         self.data = LoadDataset()
 
+        self.cnn = CNN()
+        
+        self.criterion = torch.nn.CrossEntropyLoss()
+        self.optimizer = torch.optim.Adam(self.cnn.parameters(), lr=0.001, weight_decay=0.01)
+
         self.dataLoader = torch.utils.data.DataLoader(self.data, batch_size=args.batch_size, shuffle=True)
         print("Training Dataset : {} prepared.".format(len(self.data)))
 
@@ -22,13 +27,20 @@ class GAN():
     def run(self):      
         G_losses = []
         D_losses = []
-      
+
         for epoch in range(args.epochs):
             for _iter, data in enumerate(self.dataLoader):
-                sequence, problem = data
+                sequence, labels = data
                 sequence = sequence.to(self.args.device)
-                problem = problem.to(self.args.device)
-              
+                labels = labels.to(self.args.device)
+
+                outputs = self.cnn(sequence)
+                loss = self.criterion(outputs, labels)
+
+                self.optimizer.zero_grad()
+                loss.backward()
+                self.optimizer.step()
+                train_loss += loss.item()
 
         torch.save({'G_state_dict': self.G.state_dict()}, '../TrainedModels/' + args.type + '.pt')
 

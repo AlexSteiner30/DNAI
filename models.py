@@ -23,5 +23,5 @@ class CNN(nn.Module):
             nn.Linear(16, 8)
         )
     def forward(self, x):
-        x = self.main()
+        x = self.main(x)
         return x

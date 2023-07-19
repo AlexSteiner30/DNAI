@@ -14,16 +14,16 @@ def generate_random_dna_sequence(length):
 sequences = []
 
 for i in range(128):
-    sequence = generate_random_dna_sequence(1024)
+    sequence = generate_random_dna_sequence(8192)
     sequences.append({"sequence": sequence,"problem": "0"})
 
-    sequence = generate_random_dna_sequence(1024)
+    sequence = generate_random_dna_sequence(8192)
     sequences.append({"sequence": sequence,"problem": "1"})
 
-    sequence = generate_random_dna_sequence(1024)
+    sequence = generate_random_dna_sequence(8192)
     sequences.append({"sequence": sequence,"problem": "2"})
 
-    sequence = generate_random_dna_sequence(1024)
+    sequence = generate_random_dna_sequence(8192)
     sequences.append({"sequence": sequence,"problem": "3"})
 
  

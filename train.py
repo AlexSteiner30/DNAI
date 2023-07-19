@@ -25,7 +25,7 @@ class GAN():
             for _iter, data in enumerate(self.dataLoader):
                 sequence, labels = data
                 
-                sequence = sequence.reshape(32,1024,1)
+                sequence = sequence.reshape(32,8192,1)
                 sequence = sequence.to(self.args.device)
                 labels = labels.to(self.args.device)
              
@@ -36,7 +36,7 @@ class GAN():
                 loss.backward() 
                 self.optimizer.step() 
 
-            print(f"Epoch:{epoch} loss is {loss.item()}")  
+            print(f"[Epoch] {epoch} - [Loss] {loss.item()}")  
 
         torch.save({'CNN': self.cnn.state_dict()}, 'models.pt')
 

@@ -1,13 +1,7 @@
-from matplotlib import pyplot as plt
 import torch
-import torch.optim as optim
-
 from models import *
 
 from dataset import *
-from arguments import Arguments
-
-import time
 
 class GAN():
     def __init__(self, args):
@@ -25,7 +19,7 @@ class GAN():
         print("Network prepared.")
 
     def run(self):      
-        for epoch in range(args.epochs):
+        for epoch in range(self.args.epochs):
             for _iter, data in enumerate(self.dataLoader):
                 sequence, labels = data
                 sequence = sequence.to(self.args.device)
@@ -39,13 +33,4 @@ class GAN():
                 self.optimizer.step()
                 train_loss += loss.item()
 
-        torch.save({'G_state_dict': self.G.state_dict()}, '../TrainedModels/' + args.type + '.pt')
-
-if __name__ == '__main__':
-    args = Arguments().parser().parse_args()
-
-    args.device = torch.device('cuda:'+ str(args.gpu) if torch.cuda.is_available() else 'cpu')
-    torch.cuda.set_device(args.device)
-
-    model = GAN(args)
-    model.run()
+        torch.save({'G_state_dict': self.G.state_dict()}, '../TrainedModels/' + self.args.type + '.pt')

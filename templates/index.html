@@ -92,9 +92,21 @@
             const dnaSequence = document.getElementById("dnaInput").value;
             const analysisResult = document.getElementById("analysisResult");
 
-            setTimeout(() => {
-                analysisResult.textContent = "AI analysis: No diseases found in the provided DNA sequence.";
-            }, 2000);
+            fetch('/analyze', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ dna_sequence: dnaSequence }),
+            })
+            .then(response => response.json())
+            .then(data => {
+
+                analysisResult.textContent = data.result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         }
     </script>
 </body>

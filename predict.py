@@ -25,22 +25,17 @@ def convertToArray(x):
 
     return np.array(sequence, dtype=np.float32)
 
-def predict():
-    print("DNA sequence: ")
-    text = input()
-
-    x = torch.from_numpy(convertToArray(text)).repeat(32,1,1).reshape(32,8192,1).to('cuda')
-    result = "you seem to not have any diseases"
+def predict(sequence):
+    x = torch.from_numpy(convertToArray(sequence)).repeat(32,1,1).reshape(32,8192,1).to('cuda')
+    result = "No diseases found in the provided DNA sequence."
 
     ouput = torch.argmax(CNN(x)).item()
 
     if ouput == 1:
-        result = "it seems like you are lactose intolorante"
+        result = "You are lactose intolorante"
     elif ouput == 2:
-        result = "it seems like you have cancer"
+        result = "You have cancer"
     elif ouput == 3:
-        result = "it seems like you have autismus"
+        result = "You have autismus"
 
-    print("Result: " + result)
-
-predict()
+    return result

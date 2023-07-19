@@ -12,26 +12,25 @@ class LoadDataset(data.Dataset):
         self.data = json.load(f)
 
         for i, itObject in enumerate(self.data):
-            self.sequences.append(self.convertToNumbers(itObject['sequence']))
+            self.sequences.append(self.convertToArray(itObject['sequence']))
             self.problems.append(int(itObject['problem']))
            
         f.close()
 
-    def convertToNumbers(self,x):
-        string = ''
+    def convertToArray(self,x):
+        sequence = []
+
         for i in x:
             if i == 'A':
-                string = string + '0'
+                sequence.append(0)
             elif i == 'T':
-                string = string + '1'
+                sequence.append(1)
             elif i == "G":
-                string = string + '2'
+                sequence.append(2)
             else:
-                string = string + '3'
+                sequence.append(3)
 
-        print(string + "\n\n")
-
-        return int(string)
+        return np.array(sequence)
   
     def __getitem__(self, idx):
         sequence = torch.tensor(self.sequences[idx])

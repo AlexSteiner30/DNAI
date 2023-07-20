@@ -4,7 +4,7 @@ import torch.nn as nn
 class CNN(nn.Module):
     def __init__(self):
         super(CNN, self).__init__()
-        self.seq = [8192, 4096, 2048, 1024, 512, 256, 128, 64, 32]
+        self.seq = [16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32]
         self.main = nn.Sequential()
 
         for i in self.seq:

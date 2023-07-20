@@ -7,7 +7,7 @@ import random
 # 3 = Autismus 
 
 def generate_random_dna_sequence(length):
-    bases = ['A', 'T', 'G', 'C']
+    bases = ['AT', 'TA', 'GC', 'CG']
     sequence = ''.join(random.choice(bases) for _ in range(length))
     return sequence
 
@@ -24,8 +24,7 @@ for i in range(128):
     sequences.append({"sequence": sequence,"problem": "2"})
 
     sequence = generate_random_dna_sequence(8192)
-    sequences.append({"sequence": sequence,"problem": "3"})
-
+    sequences.append({"sequence": sequence,"problem": "3"}) 
  
 with open("dataset.json", 'w') as json_file:
     json.dump(sequences, json_file, 

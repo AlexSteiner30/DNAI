@@ -3,11 +3,11 @@ import models
 
 import numpy as np
 
-CNN = models.CNN().cuda()
+CNN = models.CNN() #.cuda()
 
 cnn_path = "models.pt" 
 
-checkpoint = torch.load(cnn_path)
+checkpoint = torch.load(cnn_path,  map_location=torch.device('cpu'))
 CNN.load_state_dict(checkpoint['CNN'])
 
 def convertToArray(x):

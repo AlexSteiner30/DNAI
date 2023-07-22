@@ -13,7 +13,7 @@ def generate_random_dna_sequence(length):
 
 sequences = []
 
-for i in range(128):
+for i in range(512):
     sequence = generate_random_dna_sequence(8192)
     sequences.append({"sequence": sequence,"problem": "0"})
 

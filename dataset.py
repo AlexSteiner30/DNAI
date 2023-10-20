@@ -20,15 +20,24 @@ class LoadDataset(data.Dataset):
     def convertToArray(self,x):
         sequence = []
 
-        for i in x:
-            if i == 'A':
-                sequence.append(0)
-            elif i == 'T':
-                sequence.append(1)
-            elif i == "G":
-                sequence.append(2)
-            else:
-                sequence.append(3)
+        '''
+        Possible combination 
+            - AT
+            - TA
+            - CG
+            - GC
+        '''
+
+        for i in range(len(x)):
+            if i < len(x) - 1 and i % 2 == 0:
+                if x[i] + x[i+1] == 'AT':
+                    sequence.append(0)
+                elif x[i] + x[i+1] == 'TA':
+                    sequence.append(1)
+                elif x[i] + x[i+1] == "CG":
+                    sequence.append(2)
+                else:
+                    sequence.append(3)
 
         return np.array(sequence, dtype=np.float32)
   

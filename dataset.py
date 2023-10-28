@@ -38,7 +38,7 @@ class LoadDataset(data.Dataset):
                     sequence.append(2)
                 else:
                     sequence.append(3)
-
+    
         return np.array(sequence, dtype=np.float32)
   
     def __getitem__(self, idx):

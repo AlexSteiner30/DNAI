@@ -44,9 +44,5 @@ def predict(sequence):
 
     if ouput == 1:
         result = "You are lactose intolorante"
-    elif ouput == 2:
-        result = "You have cancer"
-    elif ouput == 3:
-        result = "You have autismus"
 
     return result

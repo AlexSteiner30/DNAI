@@ -13,7 +13,7 @@ class CNN(nn.Module):
             self.main.append(nn.ReLU())
         
         self.main.append(nn.Flatten())
-        self.main.append(nn.Linear(16, 4))
+        self.main.append(nn.Linear(16, 2))
 
     def forward(self, x):
         x = self.main(x)

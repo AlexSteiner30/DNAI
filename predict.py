@@ -1,5 +1,6 @@
 import torch
 import models
+import generate_pdf
 
 import numpy as np
 
@@ -36,14 +37,19 @@ def convertToArray(x):
 
     return np.array(sequence, dtype=np.float32)
 
-def predict(sequence):
+def predict(sequence, count):
     x = torch.from_numpy(convertToArray(sequence)).repeat(1,1,1).reshape(1,length,1).to('cuda')
-
     result = "No diseases found in the provided DNA sequence."
-
+    patterns = f"<p class=MsoNormal style='text-align:justify'><span lang=EN-GB style='font-size:1.0pt line-height:115%'>{sequence}<o:p></o:p></span></p>"
     ouput = torch.argmax(CNN(x)).item()
+    
+    out = CNN(x)
+    for i in out:
+        print(i)
 
     if ouput == 1:
-        result = "You are lactose intolorante"
+        result = "lactose intolorante"
+
+    generate_pdf.generate_pdf(result, patterns, count)
 
     return result

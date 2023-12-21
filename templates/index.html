@@ -1,61 +1,518 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
+
 <head>
-    <title>DNA Analysis for Diseases</title>
-    <script src="static/js/external/jquery.min.js"></script>
-    <script src="static/js/external/jquery-ui.min.js"></script>
-    <script src="static/js/external/jquery.highlighttextarea.js"></script>
+  <!-- Required Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="static/css/external/jquery-ui.min.css">
-    <link rel="stylesheet" href="static/css/external/jquery.highlighttextarea.min.css">
+  <!-- Document Title, Description, and Author -->
+  <title>DNAI</title>
+  <meta name="description" content="DNA HTML5 Portfolio Template.">
+  <meta name="author" content="HTMLCSSFreebies">
 
-    <link rel="stylesheet" href="static/css/index.css">
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/png" href="static/favicons/images-favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;family=Poppins:ital,wght@0,200;0,300;0,400;0,700;1,200;1,300;1,400;1,700&amp;family=Sora:wght@400;700&amp;display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="static/css/css-swiper-bundle.min.css">
+  <link rel="stylesheet" href="static/css/css-animate.min.css">
+  <link rel="stylesheet" href="static/css/css-magnific-popup.css">
+  <link rel="stylesheet" href="static/css/build-app-pro.css">
 </head>
-<body>
-    <div id="dna">
-        <div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div>
-          <div></div><div></div><div></div><div></div><div></div>
-      </div>
-    <div id="container">
-        <p>Enter your DNA sequence below:</p>
-        <label for="dnaInput">DNA Sequence:</label>
-        <textarea id="dnaInput" placeholder="Paste your DNA sequence here..."></textarea>
-        <br>
-        <button onclick="analyzeDNA()">Analyze</button>
 
-        <div id="result">
-            <p id="analysisResult">The AI analysis will appear here.</p>
+<body class="home">
+  <!-- #page -->
+  <div id="page" class="site site-wrapper">
+    <!-- #masthead -->
+    <header id="masthead" class="header-block">
+      <div class="header-container alignwide">
+        <div class="header-wrapper">
+          <div class="branding-block">
+            <div class="site-logo">
+              <a class="custom-logo-link" rel="home">
+                <img src="static/images/images-logo.svg" class="custom-logo custom-logo-svg" alt="DNAI">
+              </a>
+            </div>
+          </div>
+
+          <div class="hamburger-block">
+            <button class="hamburger hamburger--squeeze" type="button">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
         </div>
+      </div>
+    </header>
+    <!-- /#masthead -->
+
+    <!-- .hero-carousel-block -->
+    <section class="hero-carousel-block">
+      <div class="hero-swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="hero-carousel-slide" style="background-image: url(static/images/Image1.png);">
+              <div class="hero-carousel-container alignwide">
+                <div class="hero-carousel-wrapper">
+                  <h2 style="backdrop-filter: blur(1.5px) saturate(70%);">Pattern recognition<span> in the </span>DNA</h2>
+                </div>
+              </div>
+              <div class="hero-carousel-overlay"></div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-carousel-slide" style="background-image: url(static/images/Image2.png);">
+              <div class="hero-carousel-container alignwide">
+                <div class="hero-carousel-wrapper">
+                  <h2><span>Using </span>Artificial Intelligence</h2>
+                </div>
+              </div>
+              <div class="hero-carousel-overlay"></div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hero-carousel-slide" style="background-image: url(static/images/Image3.png);">
+              <div class="hero-carousel-container alignwide">
+                <div class="hero-carousel-wrapper">
+                  <h2><span>To detect </span> genetic diseases</h2>
+                </div>
+              </div>
+              <div class="hero-carousel-overlay"></div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-carousel-pagination swiper-pagination"></div>
+      </div>
+    </section>
+    <!-- /.hero-carousel-block -->
+
+    <!-- .vision-section -->
+    <section class="traditional-block dna-block bg-white text-cod-black vision-section">
+      <div class="traditional-block-container dna-container alignlarge">
+        <div class="traditional-block-wrapper dna-wrapper">
+          <div class="traditional-block-text">
+            <div class="traditional-block-head">
+              <h2 class="dna-head"><span>Our</span><br> Vision</h2>
+            </div>
+            <div class="traditional-block-content">
+              <div class="content-block">
+                <h6>We are an award winning product design consultancy studio</h6>
+                <p>Our developers and designers are experts at producing stunning websites for a multitude of industries.</p>
+                <a href="#" class="button">More Detail</a>
+              </div>
+            </div>
+          </div>
+          <div class="traditional-block-media">
+            <div class="content-block">
+              <img src="static/images/preview-vision.svg" class="vision-svg" alt="Vision">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.vision-section -->
+
+    <!-- .services-section -->
+    <section id="machine-learning" class="classic-block dna-block bg-alabaster-white text-cod-black services-section">
+      <div class="classic-container dna-container alignwide">
+        <div class="classic-wrapper dna-wrapper">
+          <div class="classic-head">
+            <h2 class="dna-head"><span>Machine</span><br> Learning</h2>
+          </div>
+          <div class="classic-body">
+            <div class="feature-block">
+              <ul>
+                <li>
+                  <div class="feature-counter">01</div>
+                  <div class="feature-body">
+                    <h3 class="feature-head">Design</h3>
+                    <p class="feature-detail">Nam malesuada nisl nisi, sit amet rutrum dolor laoreet eget.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="feature-counter">02</div>
+                  <div class="feature-body">
+                    <h3 class="feature-head">Typography</h3>
+                    <p class="feature-detail">Nam malesuada nisl nisi, sit amet rutrum dolor laoreet eget.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="feature-counter">03</div>
+                  <div class="feature-body">
+                    <h3 class="feature-head">Advertising</h3>
+                    <p class="feature-detail">Nam malesuada nisl nisi, sit amet rutrum dolor laoreet eget.</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="feature-counter">04</div>
+                  <div class="feature-body">
+                    <h3 class="feature-head">Promotion</h3>
+                    <p class="feature-detail">Nam malesuada nisl nisi, sit amet rutrum dolor laoreet eget.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.services-section -->
+
+    <!-- .portfolio-section -->
+    <section class="standard-block dna-block bg-white text-cod-black portfolio-section">
+      <div class="standard-container dna-container alignfull">
+        <div class="standard-wrapper dna-wrapper">
+          <div class="standard-head alignwide">
+            <h2 class="dna-head"><span>Genetic</span><br> Disorders</h2>
+            <p>Below you can find the genetic disorders that the artificial intelligence is able to recognise along with a brief explanation describing it.</p>
+          </div>
+          <div class="standard-body">
+            <div class="portfolio-masonry-block alignwide">
+              <div class="grid">
+                <div class="grid-item photography seo">
+                  <div class="project-wrapper">
+                    <a class="project-card" href="#project-1">
+                      <div class="project-image">
+                        <img src="static/images/preview-portfolio-1.jpg" alt="Portfolio">
+                      </div>
+                      <div class="project-content">
+                        <h3>Infinite Loop</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="grid-item design photography">
+                  <div class="project-wrapper">
+                    <a class="project-card" href="#project-2">
+                      <div class="project-image">
+                        <img src="static/images/preview-portfolio-2.jpg" alt="Portfolio">
+                      </div>
+                      <div class="project-content">
+                        <h3>Speed Circuit</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="grid-item branding design">
+                  <div class="project-wrapper">
+                    <a class="project-card" href="#project-3">
+                      <div class="project-image">
+                        <img src="static/images/preview-portfolio-3.jpg" alt="Portfolio">
+                      </div>
+                      <div class="project-content">
+                        <h3>Healthy Recipes</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="grid-item seo branding">
+                  <div class="project-wrapper">
+                    <a class="project-card" href="#project-4">
+                      <div class="project-image">
+                        <img src="static/images/preview-portfolio-4.jpg" alt="Portfolio">
+                      </div>
+                      <div class="project-content">
+                        <h3>Interior Art</h3>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.portfolio-section -->
+
+    <!-- .dna-analysis -->
+    <section id="dna-analysis" class="classic-block classic-block-reverse dna-block bg-alabaster-white text-cod-black contact-section">
+      <div class="classic-container dna-container alignwide">
+        <div class="classic-wrapper dna-wrapper">
+          <div class="classic-head">
+            <h2 class="dna-head">DNA Analysis</h2>
+          </div>
+          <div class="classic-body">
+            <div class="contact-block">
+              <div class="contact-block-container">
+                <div id="analysis-form">
+                    <div class="form-group textarea-group">
+                      <textarea style="height: 300px" class="textarea" id="dnaInput" required placeholder=" "></textarea>
+                      <label class="label" for="contact-message">Paste your DNA sequence here...</label>
+                    </div>
+                    <br>
+                    <div class="form-group checkbox-group">
+                      <input type="checkbox" id="contact-terms" value="1" required>I agree with the website's <a href="#">Privacy Policy</a> and <a href="#">Terms &amp; Conditions</a>
+                    </div>
+                    <br>
+                    <div class="form-group submit-group">
+                      <button onclick="analyzeDNA()" id="analyzeButton" type="submit" class="submit-button fullwidth">Anaylise</button>
+                    </div>
+                  </div>
+                <br>
+                <div id="analysisResult" class="form-group submit-group">
+                <a href="/download" class="submit-button fullwidth"><button class="submit-button fullwidth">Download Results</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.dna-analysis -->
+
+    <!-- .achievement-section -->
+    <section id="about" class="cover-block dna-block bg-alabaster-white text-cod-black achievement-section">
+      <div class="cover-container dna-container alignwide">
+        <div class="cover-wrapper dna-wrapper">
+          <div class="cover-head">
+            <h2 class="dna-head bg-accent text-white"><span>Our</span><br> Story</h2>
+            <p>Vivamus sit amet diam lobortis, aliquet ipsum ornare, rutrum nisl. Aenean suscipit nunc facilisis, dignissim augue.</p>
+          </div>
+          <div class="cover-body">
+            <div id="dna-counter-observer" class="achievement-block alignlarge">
+              <ul>
+                <li>
+                  <div class="achievement-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewbox="0 0 16 16">
+                      <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
+                    </svg>
+                  </div>
+                  <div class="achievement-body">
+                    <h5 class="achievement-title">
+                      <span class="dna-counter" data-counter="120">120</span>
+                      <span>K</span>
+                    </h5>
+                    <p class="achievement-type">Happy Clients</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="achievement-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewbox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"></path>
+                    </svg>
+                  </div>
+                  <div class="achievement-body">
+                    <h5 class="achievement-title">
+                      <span class="dna-counter" data-counter="1890">1890</span>
+                      <span>+</span>
+                    </h5>
+                    <p class="achievement-type">Issues Solved</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="achievement-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewbox="0 0 16 16">
+                      <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+                      <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+                    </svg>
+                  </div>
+                  <div class="achievement-body">
+                    <h5 class="achievement-title">
+                      <span class="dna-counter" data-counter="250">250</span>
+                      <span>K</span>
+                    </h5>
+                    <p class="achievement-type">Finished Projects</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="achievement-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trophy" viewbox="0 0 16 16">
+                      <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z"></path>
+                    </svg>
+                  </div>
+                  <div class="achievement-body">
+                    <h5 class="achievement-title">
+                      <span class="dna-counter" data-counter="786">786</span>
+                      <span>+</span>
+                    </h5>
+                    <p class="achievement-type">Win Awards</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-overlay"></div>
+    </section>
+    <!-- /.achievement-section -->
+
+    <!-- .contact-section -->
+    <section id="contact" class="classic-block classic-block-reverse dna-block bg-alabaster-white text-cod-black contact-section">
+      <div class="classic-container dna-container alignwide">
+        <div class="classic-wrapper dna-wrapper">
+          <div class="classic-head">
+            <h2 class="dna-head">Contact</h2>
+          </div>
+          <div class="classic-body">
+            <div class="contact-block">
+              <div class="contact-block-container">
+                <form action="index-pro.html" id="contact-form">
+                  <div class="form-group input-group">
+                    <input type="text" class="input" id="contact-name" required placeholder=" ">
+                    <label class="label" for="contact-name">Name</label>
+                  </div>
+                  <div class="form-group input-group">
+                    <input type="email" class="input" id="contact-email" required placeholder=" ">
+                    <label class="label" for="contact-email">Email</label>
+                  </div>
+                  <div class="form-group select-group">
+                    <select class="select" id="contact-interest" required>
+                      <option class="option" value="" disabled selected>Interested in...</option>
+                      <option class="option" value="web-design">Web Design</option>
+                      <option class="option" value="seo">SEO</option>
+                      <option class="option" value="marketing">Marketing</option>
+                    </select>
+                  </div>
+                  <div class="form-group textarea-group">
+                    <textarea class="textarea" id="contact-message" required placeholder=" "></textarea>
+                    <label class="label" for="contact-message">Your message</label>
+                  </div>
+                  <div class="form-group checkbox-group">
+                    <input type="checkbox" id="contact-terms" value="1" required>I agree with the website's <a href="#">Privacy Policy</a> and <a href="#">Terms &amp; Conditions</a>
+                  </div>
+                  <div class="form-group submit-group">
+                    <button type="submit" class="submit-button fullwidth">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /.contact-section -->
+
+    <!-- #project-1 -->
+    <div id="project-1" class="popup-block mfp-hide alignmedium">
+      <div class="popup-content">
+        <h2 class="aligndefault">Infinit Loop</h2>
+        <picture class="img-cover alignwide">
+          <img src="static/images/preview-portfolio-1.jpg" alt="Project">
+        </picture>
+        <p class="aligndefault">Vestibulum elit odio, fringilla eget ligula vitae, faucibus sagittis neque. Vivamus sit amet <code class="aligndefault">font-size: 12px;</code> tincidunt nunc.</p>
+        <hr class="aligndefault">
+        <h4 class="aligndefault">Designer Goal</h4>
+        <blockquote class="aligndefault">The goal of a designer is to listen, observe, understand, sympathize, empathize, synthesize, and glean insights that enable him or her to &lsquo;make the invisible visible. <cite>Hillman Curtis</cite></blockquote>
+        <ul class="aligndefault">
+          <li>Fusce vestibulum, ipsum interdum cursus porta.</li>
+          <li>Morbi ac felis ac massa iaculis dictum eu.</li>
+          <li>Maecenas ullamcorper arcu at tellus semper facilisis.</li>
+        </ul>
+        <p class="aligndefault">Nulla ac lacus erat. Vivamus aliquet ex non ornare rhoncus. Morbi accumsan interdum odio at vestibulum. Nunc non massa in ex auctor volutpat. Sed in sodales orci.</p>
+      </div>
     </div>
+    <!-- /#project-1 -->
 
-    <script>
-        function analyzeDNA() {
-            const dnaSequence = document.getElementById("dnaInput").value;
-            const analysisResult = document.getElementById("analysisResult");
+    <!-- #project-2 -->
+    <div id="project-2" class="popup-block mfp-hide alignmedium">
+      <div class="popup-content">
+        <h2 class="aligndefault">Speed Circuit</h2>
+        <picture class="img-cover alignwide">
+          <img src="static/images/preview-portfolio-2.jpg" alt="Project">
+        </picture>
+        <p class="aligndefault">Vestibulum elit odio, fringilla eget ligula vitae, faucibus sagittis neque. Vivamus sit amet tincidunt nunc. Curabitur ullamcorper, ipsum a cursus consectetur, odio elit commodo metus, quis tristique magna sem a nisi.</p>
+        <blockquote class="aligndefault">Have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.</blockquote>
+        <p class="aligndefault">Nulla ac lacus erat. Vivamus aliquet ex non ornare rhoncus. Morbi accumsan interdum odio at vestibulum. Nunc non massa in ex auctor volutpat. Sed in sodales orci.</p>
+      </div>
+    </div>
+    <!-- /#project-2 -->
 
-            fetch('/analyze', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ dna_sequence: dnaSequence }),
-            })
-            .then(response => response.json())
-            .then(data => {
+    <!-- #project-3 -->
+    <div id="project-3" class="popup-block mfp-hide alignmedium">
+      <div class="popup-content">
+        <h2 class="aligndefault">Healthy Recipes</h2>
+        <picture class="img-cover alignwide">
+          <img src="static/images/preview-portfolio-3.jpg" alt="Project">
+        </picture>
+        <p class="aligndefault">Vestibulum elit odio, fringilla eget ligula vitae, faucibus sagittis neque. Vivamus sit amet tincidunt nunc. Curabitur ullamcorper, ipsum a cursus consectetur, odio elit commodo metus, quis tristique magna sem a nisi.</p>
+        <blockquote class="aligndefault">Have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.</blockquote>
+        <p class="aligndefault">Nulla ac lacus erat. Vivamus aliquet ex non ornare rhoncus. Morbi accumsan interdum odio at vestibulum. Nunc non massa in ex auctor volutpat. Sed in sodales orci.</p>
+      </div>
+    </div>
+    <!-- /#project-3 -->
 
-                analysisResult.textContent = data.result;
-                $('textarea').highlightTextarea({
-                    words: ['CATGTGAAC']
-                });
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    </script>
+    <!-- #project-4 -->
+    <div id="project-4" class="popup-block mfp-hide alignmedium">
+      <div class="popup-content">
+        <h2 class="aligndefault">Interior Art</h2>
+        <picture class="img-cover alignwide">
+          <img src="static/images/preview-portfolio-4.jpg" alt="Project">
+        </picture>
+        <p class="aligndefault">Vestibulum elit odio, fringilla eget ligula vitae, faucibus sagittis neque. Vivamus sit amet tincidunt nunc. Curabitur ullamcorper, ipsum a cursus consectetur, odio elit commodo metus, quis tristique magna sem a nisi.</p>
+        <blockquote class="aligndefault">Have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.</blockquote>
+        <p class="aligndefault">Nulla ac lacus erat. Vivamus aliquet ex non ornare rhoncus. Morbi accumsan interdum odio at vestibulum. Nunc non massa in ex auctor volutpat. Sed in sodales orci.</p>
+      </div>
+    </div>
+    <!-- /#project-4 -->
+
+    <!-- .footer-block -->
+    <footer class="footer-block bg-oxford-blue text-white">
+      <div class="footer-block-container alignwide">
+        <div class="footer-block-wrapper">
+          <div class="company-block">
+            <div class="company-address">
+              <h5 class="company-label">Address</h5>
+              <address>
+                Visit us at:<br>
+                Via Adriano Olivetti 1, Treviso<br>
+                Italy
+              </address>
+            </div>
+            <div class="company-contact">
+              <h5 class="company-label">Contact</h5>
+              <ul>
+                <li>
+                  <a href="tel:+393515176408">+39 (351) 517 6408</a>
+                </li>
+                <li>
+                  <a href="mailto:alex.steiner@student.h-is.com">alex.steiner@student.h-is.com</a>
+                </li>
+              </ul>
+            </div>
+            <div class="company-links">
+              <h5 class="company-label">Links</h5>
+              <ul>
+                <li>
+                  <a href="#">Research Paper</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="copyright-block">
+            <ul>
+              <li>
+                <span class="copyright">&copy; 2023 DNAI. All Rights Reserved.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /.footer-block -->
+
+  </div>
+  <!-- /#page -->
+
+  <!-- Javascript Files -->
+  <script data-cfasync="false" src="static/js/cloudflare-static-email-decode.min.js"></script><script src="static/js/js-jquery-3.6.0.min.js"></script>
+  <script src="static/js/js-imagesloaded.pkgd.min.js"></script>
+  <script src="static/js/js-isotope.pkgd.min.js"></script>
+  <script src="static/js/js-swiper-bundle.min.js"></script>
+  <script src="static/js/js-magnific-popup.min.js"></script>
+  <script src="static/js/2953-build-app-pro.js"></script>
+
+  <script src="static/js/analyisis.js"></script>
+  <script defer src="static/js/beacon.min.js"></script>
 </body>
+
 </html>

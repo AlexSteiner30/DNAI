@@ -38,6 +38,7 @@ def convertToArray(x):
 
 def predict(sequence):
     x = torch.from_numpy(convertToArray(sequence)).repeat(1,1,1).reshape(1,length,1).to('cuda')
+
     result = "No diseases found in the provided DNA sequence."
 
     ouput = torch.argmax(CNN(x)).item()

@@ -3,7 +3,7 @@ import predict
 import os
 
 app = Flask(__name__, static_folder="static/")
-count = 1
+count = 0
 
 @app.route('/')
 def index():
@@ -16,8 +16,9 @@ def analyze():
     data = request.get_json()
     dna_sequence = data['dna_sequence']
 
-    analysis_result = predict.predict(dna_sequence, count)
     count = count + 1
+
+    analysis_result = predict.predict(dna_sequence, count)
 
     return jsonify({'result': analysis_result})
 

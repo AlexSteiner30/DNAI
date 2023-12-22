@@ -1,7 +1,7 @@
 import torch
 from models import *
 from torch import nn
-from torch.optim import Adam
+from torch.optim import SGD
 
 from dataset import *
 
@@ -13,7 +13,7 @@ class GAN():
         self.cnn = CNN().to(self.args.device)
         
         self.criterion = torch.nn.CrossEntropyLoss()
-        self.optimizer = Adam(self.cnn.parameters(), lr=1e-3)
+        self.optimizer = SGD(self.cnn.parameters(), lr=0.001, momentum=0.9)
 
         self.dataLoader = torch.utils.data.DataLoader(self.data, batch_size=args.batch_size, shuffle=True)
         print("Training Dataset : {} prepared.".format(len(self.data)))
@@ -28,11 +28,12 @@ class GAN():
                 sequence = sequence.reshape(self.args.batch_size,32768,1)
                 sequence = sequence.to(self.args.device)
                 labels = labels.to(self.args.device)
-             
-                outputs = self.cnn(sequence)
-                loss = self.criterion(outputs, labels)
                 
                 self.optimizer.zero_grad()
+
+                outputs, _ = self.cnn(sequence)
+                loss = self.criterion(outputs, labels)
+        
                 loss.backward() 
                 self.optimizer.step() 
 

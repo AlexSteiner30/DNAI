@@ -3,6 +3,7 @@ import predict
 import os
 
 app = Flask(__name__, static_folder="static/")
+count = 1
 
 @app.route('/')
 def index():
@@ -10,7 +11,7 @@ def index():
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
-    count = 1
+    global count 
 
     data = request.get_json()
     dna_sequence = data['dna_sequence']
@@ -22,7 +23,9 @@ def analyze():
 
 @app.route('/download')
 def download():
-    return send_file(f"static/analysis/analysis_{str(1)}.pdf", as_attachment=True)
+    global count
+
+    return send_file(f"static/analysis/analysis_{str(count)}.pdf", as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

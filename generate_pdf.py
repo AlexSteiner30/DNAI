@@ -1344,4 +1344,4 @@ def generate_pdf(disorder, patterns, count):
 
     html_code = ' '.join([str(i) for i in new_lines])
 
-    convert_html_to_pdf(html_code, f'static/analysis/analysis_{str(count)}.pdf')
+    convert_html_to_pdf(html_code, f'static/analysis/analysis_{(count)}.pdf')

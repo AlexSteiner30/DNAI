@@ -5,11 +5,16 @@ import generate
 
 import numpy as np
 
-CNN = models.CNN().cuda()
+device = torch.device('cuda:'+ str(0) if torch.cuda.is_available() else 'cpu')
+
+if torch.cuda.is_available():
+    CNN = models.CNN().cuda()
+else:
+    CNN = models.CNN().cpu()
 
 cnn_path = "models.pt" 
 
-checkpoint = torch.load(cnn_path,  map_location=torch.device('cpu'))
+checkpoint = torch.load(cnn_path,  map_location=device)
 CNN.load_state_dict(checkpoint['CNN'])
 
 length = 32768
@@ -57,14 +62,18 @@ def convertToString(x):
         return "GC"
 
 def predict(sequence, count):
+    print("Predicting...")
+    
     sequence = sequence.upper()
 
-    x = torch.from_numpy(convertToArray(sequence)).repeat(32,1,1).reshape(32,length,1).to('cuda')
+    x = torch.from_numpy(convertToArray(sequence)).repeat(32,1,1).reshape(32,length,1).to(device)
 
     result = "no diseases found in the provided DNA sequence."
     patterns = f"<p class=MsoNormal style='text-align:justify><span lang=EN-GB style='font-size:1.0pt line-height:115%'>"
 
     ouput, activation_maps = CNN(x)
+
+    print("Prediction Done!")
 
     ouput =  torch.argmax(ouput).item()
     if ouput != 0:

@@ -2,7 +2,7 @@ import torch
 import models
 import generate_pdf
 import generate
-
+import torch.nn.functional as F
 import numpy as np
 
 device = torch.device('cuda:'+ str(0) if torch.cuda.is_available() else 'cpu')
@@ -68,38 +68,53 @@ def predict(sequence, count):
 
     x = torch.from_numpy(convertToArray(sequence)).repeat(32,1,1).reshape(32,length,1).to(device)
 
-    result = "no diseases found in the provided DNA sequence."
-    patterns = f"<p class=MsoNormal style='text-align:justify><span lang=EN-GB style='font-size:1.0pt line-height:115%'>"
+    results = []
+    patterns = f"<p class=MsoNormal style='text-align:justify><span lang=EN-GB style='font-size:1.0pt line-height:115%'></span>"
 
     ouput, activation_maps = CNN(x)
 
+    print(ouput[0])
+
     print("Prediction Done!")
 
-    ouput =  torch.argmax(ouput).item()
-    if ouput != 0:
-        sequence = convertToArray(sequence)
-        a = activation_maps[0][0] == sequence
+    sequence = convertToArray(sequence)
 
-        for i, j in enumerate(sequence):
-            if sequence[i] == activation_maps[0][0][i] == True:
-                patterns = patterns + f"<mark>{convertToString(sequence[i])}</mark>"
+    for i, j in enumerate(sequence):
+        if torch.argmax(ouput) != 0:
+            if sequence[i] == activation_maps[0][1][i] == True and ouput[0][1].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+                patterns = patterns + f"<mark style='background-color: yellow;'>{convertToString(sequence[i])}</mark>"
+
+            if sequence[i] == activation_maps[0][2][i] == True and ouput[0][2].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+                patterns = patterns + f"<mark style='background-color: lightgreen;'>{convertToString(sequence[i])}</mark>"
+
+            if sequence[i] == activation_maps[0][3][i] == True and ouput[0][3].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+                patterns = patterns + f"<mark style='background-color: lightblue;'>{convertToString(sequence[i])}</mark>"
+            
             else:
                 patterns = patterns + f"{convertToString(sequence[i])}"
 
-        patterns = patterns + "<o:p></o:p></span></p>"
+        else:
+            if sequence[i] == activation_maps[0][0][i] == True and ouput[0][0].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+                patterns = patterns + f"<mark style='background-color: orange;'>{convertToString(sequence[i])}</mark>"
+            
+            else:
+                patterns = patterns + f"{convertToString(sequence[i])}"
 
+    if ouput[0][1].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+        results.append("lactose intolerance")
+    if ouput[0][2].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+        results.append("2")
+    if ouput[0][3].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+        results.append("autism")
     else:
-        patterns = patterns = f"<p class=MsoNormal style='text-align:justify><span lang=EN-GB style='font-size:1.0pt line-height:115%'>{sequence}<o:p></o:p></span></p>"
+        results = ["no diseases found in the provided DNA sequence."]
 
-    if ouput == 1:
-        result = "lactose intolerant"
-    elif ouput == 2:
-        result = "haemophilia"
-    elif ouput == 3:
-        result = "autism"
+    patterns = patterns + "<o:p></o:p></span></p>"
 
-    generate_pdf.generate_pdf(result, patterns, count)
+    print(results)
 
-    return result
+    generate_pdf.generate_pdf(results, patterns, count)
+
+    return results
 
 #predict(generate.generate_random_dna_sequence(length),1)

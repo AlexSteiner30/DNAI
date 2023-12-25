@@ -13,25 +13,33 @@ def convert_html_to_pdf(html_content, pdf_path):
 def generate_pdf(disorder, patterns, count):
     new_lines = []
 
-    genetic_markers = "N/A"
-    risk_factors = "N/A"
-    recommendations = "N/A"
+    genetic_markers = []
+    risk_factors = []
+    recommendations = []
 
-    if disorder == "lactose intolerant":
-        genetic_markers = "The C/T-13910 SNP in the MCM6 gene is associated with lactase persistence, allowing continued lactase production into adulthood. The C/T-13910 SNP in the MCM6 gene, with the T allele, is linked to lactase non-persistence, resulting in reduced lactase production after childhood."
-        risk_factors = "Genetic factors, such as the C/T-13910 SNP in the MCM6 gene, play a role in determining an individual's susceptibility to lactose intolerance. Lactose intolerance is more commonly observed in certain ethnic groups, including people of African, Asian, Native American, and Hispanic descent. Aging is a significant risk factor, as the production of lactase tends to decrease naturally after childhood, making adults more prone to lactose intolerance. Gastrointestinal disorders like celiac disease, Crohn's disease, and irritable bowel syndrome can elevate the risk of developing lactose intolerance. Infections or injuries to the digestive system may lead to a temporary reduction in lactase production, contributing to lactose intolerance. Certain medical treatments, such as chemotherapy or radiation therapy, can impact the digestive system and increase the risk of lactose intolerance. Some medications, especially those affecting the gastrointestinal system, may interfere with lactose digestion and absorption, contributing to intolerance. Premature infants may have lower levels of lactase, increasing their susceptibility to lactose intolerance. A diet low in dairy products during childhood may contribute to decreased lactase production, potentially leading to lactose intolerance later in life. Changes in the composition of gut microbiota can influence lactose digestion and contribute to the development of lactose intolerance."
-        recommendations = "Gradually introduce small amounts of dairy into your diet to gauge tolerance levels, starting with lactose-free or low-lactose options. Take lactase supplements before consuming dairy products to aid in the digestion of lactose and minimize discomfort. Opt for lactose-free or reduced-lactose versions of milk and dairy products, widely available in most grocery stores. Experiment with different dairy sources, such as hard cheeses or yoghurt, to identify options that are better tolerated. Monitor portion sizes when consuming dairy, as smaller amounts may be better tolerated, allowing you to enjoy dairy without discomfort. Pair dairy with other foods as part of a meal rather than consuming it on an empty stomach to improve digestion. Ensure an adequate intake of calcium by exploring non-dairy sources like leafy green vegetables, fortified plant-based milk, and calcium supplements if necessary. Consult with a registered dietitian for personalized advice on managing lactose intolerance and planning a well-balanced diet that meets your nutritional needs. Read food labels carefully to identify hidden sources of lactose in processed and packaged foods, helping you avoid unintentional consumption. Maintain a food diary to track dairy consumption and associated symptoms, aiding in the identification of specific triggers and informing dietary adjustments. Stay hydrated, especially if diarrhea is a symptom of lactose intolerance, as adequate water intake can help manage symptoms and prevent dehydration. Consider incorporating probiotics into your diet, as some individuals find relief from lactose intolerance symptoms with their use. Consult with a healthcare professional before starting any supplementation."
-    
-    elif disorder == "haemophilia":
-        genetic_markers = "Haemophilia A, characterized by Factor VIII deficiency, is associated with genetic mutations in the F8 gene. Haemophilia B, characterized by Factor IX deficiency, is linked to genetic mutations in the F9 gene."
-        risk_factors = "Advancing age is a common risk factor for cardiovascular diseases, as the likelihood of developing such conditions increases with age. Men generally face a higher risk of cardiovascular issues, while the risk for women tends to rise after menopause. A family history of heart disease or stroke can elevate an individual's risk of experiencing similar cardiovascular events. Certain genetic factors may predispose individuals to cardiovascular conditions, emphasizing the importance of understanding one's family medical history. Smoking introduces harmful chemicals that can damage blood vessels and heart tissues, significantly increasing the risk of cardiovascular diseases. High blood pressure, or hypertension, places strain on the heart and arteries, contributing to an increased risk of cardiovascular events. Elevated levels of LDL (bad) cholesterol and low levels of HDL (good) cholesterol are associated with an increased risk of atherosclerosis and cardiovascular diseases. Individuals with diabetes face a higher risk of developing cardiovascular diseases, emphasizing the importance of managing blood sugar levels. Excess body weight, particularly around the abdomen, is a risk factor for heart disease, highlighting the importance of maintaining a healthy weight. Lack of regular physical activity is associated with an increased risk of heart disease, underscoring the importance of an active lifestyle. Diets high in saturated fats, trans fats, sodium, and low in fruits and vegetables contribute to heart disease risk, emphasizing the role of a healthy diet. Excessive alcohol consumption can raise blood pressure and contribute to heart disease, highlighting the importance of moderate drinking. Chronic stress may contribute to unhealthy behaviors that increase the risk of heart disease, emphasizing the importance of stress management. Untreated sleep apnea, a condition characterized by interrupted breathing during sleep, can contribute to hypertension and heart problems, emphasizing the importance of addressing sleep-related issues. Individuals with a history of previous cardiovascular events, such as heart attacks or strokes, are at an increased risk of experiencing future events, underscoring the importance of ongoing monitoring and preventive measures."
-        recommendations = "Schedule regular health check-ups to monitor blood pressure, cholesterol levels, and overall cardiovascular health with healthcare professionals. Adopt a heart-healthy diet rich in fruits, vegetables, whole grains, and lean proteins, while minimizing saturated fats, trans fats, cholesterol, and sodium. Engage in regular physical activity, aiming for at least 150 minutes of moderate-intensity exercise or 75 minutes of vigorous-intensity exercise per week. Achieve and maintain a healthy weight through a balanced diet and regular physical activity. If you smoke, quit smoking, and seek support from healthcare professionals or smoking cessation programs. Consume alcohol in moderation, if at all, with guidelines suggesting up to one drink per day for women and up to two drinks per day for men. Practice stress-management techniques such as deep breathing, meditation, yoga, or other relaxation methods to promote overall well-being. Ensure sufficient, quality sleep each night and address sleep disorders, such as sleep apnea, if present. Manage diabetes through regular monitoring of blood sugar levels, medication adherence, and lifestyle modifications. Adhere to prescribed medication for conditions like hypertension or high cholesterol, attending regular follow-up appointments with healthcare providers. Understand your family medical history and share it with healthcare providers for a comprehensive cardiovascular risk assessment. Stay informed about the latest developments in cardiovascular health and follow guidelines for heart-healthy living. Seek support from friends, family, or community groups to maintain motivation for healthy lifestyle changes. Consider counselling or therapy if dealing with chronic stress, anxiety, or depression that may impact heart health. Learn and recognize the signs of a heart attack or stroke, and know the appropriate emergency response measures for prompt action."
-    
-    else:
-        genetic_markers = "Deletions, mutations, or duplications in the SHANK3 gene are associated with certain cases of autism spectrum disorder (ASD), impacting synaptic function crucial for neural communication. Variations, deletions, or mutations in the CNTNAP2 gene have been identified in individuals with ASD, particularly affecting neural circuit formation related to language development and social communication. Variations or mutations in the MET gene, involved in brain development, have been linked to an increased risk of ASD, especially in cases with co-occurring gastrointestinal issues. Mutations or variations in NLGN and NRXN genes, which play roles in synapse formation, are associated with disruptions in neural connectivity and have been implicated in ASD. Variations or mutations in the FOXP2 gene, associated with language development, contribute to language difficulties observed in some individuals with ASD."
-        risk_factors = "A family history of autism spectrum disorder (ASD) or other developmental disorders increases the likelihood of ASD in subsequent generations due to certain genetic factors. Older parental age, particularly in fathers, has been associated with a slightly higher risk of ASD in their offspring. Babies born prematurely or with low birth weight may have an elevated risk of developing ASD. Prenatal and perinatal complications, such as exposure to certain medications, maternal illness, or birth complications, are potential risk factors for ASD. Prenatal exposure to certain drugs, medications, or environmental toxins may contribute to an increased risk of ASD. Maternal health conditions like diabetes, obesity, and certain infections during pregnancy may be associated with a higher risk of ASD. Certain infections or illnesses during early childhood have been suggested to be linked to an increased risk of ASD, although the evidence is not conclusive. Boys are diagnosed with ASD more frequently than girls, contributing to the understanding that being male is a potential risk factor for ASD. Some studies suggest a potential link between lower socioeconomic status and an increased risk of ASD, though the relationship is complex and influenced by various factors. Maternal and paternal mental health conditions, such as depression or anxiety, may be associated with a slightly increased risk of ASD in their children."
-        recommendations = "Seek early intervention services such as speech therapy and occupational therapy to address developmental challenges in individuals with autism spectrum disorder (ASD). Collaborate with educators to create and implement an Individualized Education Plan (IEP) tailored to the unique needs and strengths of the individual with ASD. Provide a structured and predictable environment at home and in educational settings to enhance the comfort and security of individuals with ASD. Engage in social skills training programs to help individuals with ASD develop effective communication and interaction skills. Utilize visual aids, augmentative and alternative communication (AAC) devices, and other supports to facilitate communication for individuals with ASD. Implement sensory integration techniques to address sensory sensitivities or challenges commonly experienced by individuals with ASD. Consider behavioural therapy, such as Applied Behavior Analysis (ABA), to address challenging behaviours and reinforce positive ones. Attend training sessions and workshops to empower parents and caregivers with effective strategies for supporting individuals with ASD. Connect with local and online autism support groups and organizations to access information, share experiences, and find community support. Develop a transition plan that addresses the evolving needs of individuals with ASD as they move from childhood to adolescence and adulthood. Foster and encourage the unique interests and strengths of individuals with ASD, recognizing their potential for excellence in specific areas. Gradually introduce and promote independence in daily living skills, adapting tasks to the individual's abilities and preferences. Establish and maintain a consistent daily routine to provide individuals with ASD with a sense of predictability and security. Access therapeutic supports such as psychological counselling or psychotherapy to address mental health and emotional well-being. Advocate for inclusion and acceptance in schools, workplaces, and community settings to promote understanding and support for individuals with ASD."
-        
+    for i in disorder:
+        if i == "no diseases found in the provided DNA sequence.":
+            genetic_markers.append("N/A")
+            risk_factors.append("N/A")
+            recommendations.append("N/A")
+
+            break
+
+        elif i == "lactose intolerance":
+            genetic_markers.append("The C/T-13910 SNP in the MCM6 gene is associated with lactase persistence, allowing continued lactase production into adulthood. The C/T-13910 SNP in the MCM6 gene, with the T allele, is linked to lactase non-persistence, resulting in reduced lactase production after childhood.")
+            risk_factors.append("Genetic factors, such as the C/T-13910 SNP in the MCM6 gene, play a role in determining an individual's susceptibility to lactose intolerance. Lactose intolerance is more commonly observed in certain ethnic groups, including people of African, Asian, Native American, and Hispanic descent. Aging is a significant risk factor, as the production of lactase tends to decrease naturally after childhood, making adults more prone to lactose intolerance. Gastrointestinal disorders like celiac disease, Crohn's disease, and irritable bowel syndrome can elevate the risk of developing lactose intolerance. Infections or injuries to the digestive system may lead to a temporary reduction in lactase production, contributing to lactose intolerance. Certain medical treatments, such as chemotherapy or radiation therapy, can impact the digestive system and increase the risk of lactose intolerance. Some medications, especially those affecting the gastrointestinal system, may interfere with lactose digestion and absorption, contributing to intolerance. Premature infants may have lower levels of lactase, increasing their susceptibility to lactose intolerance. A diet low in dairy products during childhood may contribute to decreased lactase production, potentially leading to lactose intolerance later in life. Changes in the composition of gut microbiota can influence lactose digestion and contribute to the development of lactose intolerance.")
+            recommendations.append("Gradually introduce small amounts of dairy into your diet to gauge tolerance levels, starting with lactose-free or low-lactose options. Take lactase supplements before consuming dairy products to aid in the digestion of lactose and minimize discomfort. Opt for lactose-free or reduced-lactose versions of milk and dairy products, widely available in most grocery stores. Experiment with different dairy sources, such as hard cheeses or yoghurt, to identify options that are better tolerated. Monitor portion sizes when consuming dairy, as smaller amounts may be better tolerated, allowing you to enjoy dairy without discomfort. Pair dairy with other foods as part of a meal rather than consuming it on an empty stomach to improve digestion. Ensure an adequate intake of calcium by exploring non-dairy sources like leafy green vegetables, fortified plant-based milk, and calcium supplements if necessary. Consult with a registered dietitian for personalized advice on managing lactose intolerance and planning a well-balanced diet that meets your nutritional needs. Read food labels carefully to identify hidden sources of lactose in processed and packaged foods, helping you avoid unintentional consumption. Maintain a food diary to track dairy consumption and associated symptoms, aiding in the identification of specific triggers and informing dietary adjustments. Stay hydrated, especially if diarrhea is a symptom of lactose intolerance, as adequate water intake can help manage symptoms and prevent dehydration. Consider incorporating probiotics into your diet, as some individuals find relief from lactose intolerance symptoms with their use. Consult with a healthcare professional before starting any supplementation.")
+
+        elif i == "haemophilia":
+            genetic_markers.append("Haemophilia A, characterized by Factor VIII deficiency, is associated with genetic mutations in the F8 gene. Haemophilia B, characterized by Factor IX deficiency, is linked to genetic mutations in the F9 gene.")
+            risk_factors.append("Advancing age is a common risk factor for cardiovascular diseases, as the likelihood of developing such conditions increases with age. Men generally face a higher risk of cardiovascular issues, while the risk for women tends to rise after menopause. A family history of heart disease or stroke can elevate an individual's risk of experiencing similar cardiovascular events. Certain genetic factors may predispose individuals to cardiovascular conditions, emphasizing the importance of understanding one's family medical history. Smoking introduces harmful chemicals that can damage blood vessels and heart tissues, significantly increasing the risk of cardiovascular diseases. High blood pressure, or hypertension, places strain on the heart and arteries, contributing to an increased risk of cardiovascular events. Elevated levels of LDL (bad) cholesterol and low levels of HDL (good) cholesterol are associated with an increased risk of atherosclerosis and cardiovascular diseases. Individuals with diabetes face a higher risk of developing cardiovascular diseases, emphasizing the importance of managing blood sugar levels. Excess body weight, particularly around the abdomen, is a risk factor for heart disease, highlighting the importance of maintaining a healthy weight. Lack of regular physical activity is associated with an increased risk of heart disease, underscoring the importance of an active lifestyle. Diets high in saturated fats, trans fats, sodium, and low in fruits and vegetables contribute to heart disease risk, emphasizing the role of a healthy diet. Excessive alcohol consumption can raise blood pressure and contribute to heart disease, highlighting the importance of moderate drinking. Chronic stress may contribute to unhealthy behaviors that increase the risk of heart disease, emphasizing the importance of stress management. Untreated sleep apnea, a condition characterized by interrupted breathing during sleep, can contribute to hypertension and heart problems, emphasizing the importance of addressing sleep-related issues. Individuals with a history of previous cardiovascular events, such as heart attacks or strokes, are at an increased risk of experiencing future events, underscoring the importance of ongoing monitoring and preventive measures.")
+            recommendations.append("Schedule regular health check-ups to monitor blood pressure, cholesterol levels, and overall cardiovascular health with healthcare professionals. Adopt a heart-healthy diet rich in fruits, vegetables, whole grains, and lean proteins, while minimizing saturated fats, trans fats, cholesterol, and sodium. Engage in regular physical activity, aiming for at least 150 minutes of moderate-intensity exercise or 75 minutes of vigorous-intensity exercise per week. Achieve and maintain a healthy weight through a balanced diet and regular physical activity. If you smoke, quit smoking, and seek support from healthcare professionals or smoking cessation programs. Consume alcohol in moderation, if at all, with guidelines suggesting up to one drink per day for women and up to two drinks per day for men. Practice stress-management techniques such as deep breathing, meditation, yoga, or other relaxation methods to promote overall well-being. Ensure sufficient, quality sleep each night and address sleep disorders, such as sleep apnea, if present. Manage diabetes through regular monitoring of blood sugar levels, medication adherence, and lifestyle modifications. Adhere to prescribed medication for conditions like hypertension or high cholesterol, attending regular follow-up appointments with healthcare providers. Understand your family medical history and share it with healthcare providers for a comprehensive cardiovascular risk assessment. Stay informed about the latest developments in cardiovascular health and follow guidelines for heart-healthy living. Seek support from friends, family, or community groups to maintain motivation for healthy lifestyle changes. Consider counselling or therapy if dealing with chronic stress, anxiety, or depression that may impact heart health. Learn and recognize the signs of a heart attack or stroke, and know the appropriate emergency response measures for prompt action.")
+
+        else:  
+            genetic_markers.append("Deletions, mutations, or duplications in the SHANK3 gene are associated with certain cases of autism spectrum disorder (ASD), impacting synaptic function crucial for neural communication. Variations, deletions, or mutations in the CNTNAP2 gene have been identified in individuals with ASD, particularly affecting neural circuit formation related to language development and social communication. Variations or mutations in the MET gene, involved in brain development, have been linked to an increased risk of ASD, especially in cases with co-occurring gastrointestinal issues. Mutations or variations in NLGN and NRXN genes, which play roles in synapse formation, are associated with disruptions in neural connectivity and have been implicated in ASD. Variations or mutations in the FOXP2 gene, associated with language development, contribute to language difficulties observed in some individuals with ASD.")
+            risk_factors.append("A family history of autism spectrum disorder (ASD) or other developmental disorders increases the likelihood of ASD in subsequent generations due to certain genetic factors. Older parental age, particularly in fathers, has been associated with a slightly higher risk of ASD in their offspring. Babies born prematurely or with low birth weight may have an elevated risk of developing ASD. Prenatal and perinatal complications, such as exposure to certain medications, maternal illness, or birth complications, are potential risk factors for ASD. Prenatal exposure to certain drugs, medications, or environmental toxins may contribute to an increased risk of ASD. Maternal health conditions like diabetes, obesity, and certain infections during pregnancy may be associated with a higher risk of ASD. Certain infections or illnesses during early childhood have been suggested to be linked to an increased risk of ASD, although the evidence is not conclusive. Boys are diagnosed with ASD more frequently than girls, contributing to the understanding that being male is a potential risk factor for ASD. Some studies suggest a potential link between lower socioeconomic status and an increased risk of ASD, though the relationship is complex and influenced by various factors. Maternal and paternal mental health conditions, such as depression or anxiety, may be associated with a slightly increased risk of ASD in their children.")
+            recommendations.append("Seek early intervention services such as speech therapy and occupational therapy to address developmental challenges in individuals with autism spectrum disorder (ASD). Collaborate with educators to create and implement an Individualized Education Plan (IEP) tailored to the unique needs and strengths of the individual with ASD. Provide a structured and predictable environment at home and in educational settings to enhance the comfort and security of individuals with ASD. Engage in social skills training programs to help individuals with ASD develop effective communication and interaction skills. Utilize visual aids, augmentative and alternative communication (AAC) devices, and other supports to facilitate communication for individuals with ASD. Implement sensory integration techniques to address sensory sensitivities or challenges commonly experienced by individuals with ASD. Consider behavioural therapy, such as Applied Behavior Analysis (ABA), to address challenging behaviours and reinforce positive ones. Attend training sessions and workshops to empower parents and caregivers with effective strategies for supporting individuals with ASD. Connect with local and online autism support groups and organizations to access information, share experiences, and find community support. Develop a transition plan that addresses the evolving needs of individuals with ASD as they move from childhood to adolescence and adulthood. Foster and encourage the unique interests and strengths of individuals with ASD, recognizing their potential for excellence in specific areas. Gradually introduce and promote independence in daily living skills, adapting tasks to the individual's abilities and preferences. Establish and maintain a consistent daily routine to provide individuals with ASD with a sense of predictability and security. Access therapeutic supports such as psychological counselling or psychotherapy to address mental health and emotional well-being. Advocate for inclusion and acceptance in schools, workplaces, and community settings to promote understanding and support for individuals with ASD.")
+                        
     new_lines.append(
     """
         <html xmlns:v='urn:schemas-microsoft-com:vml'
@@ -1222,122 +1230,137 @@ def generate_pdf(disorder, patterns, count):
 
         <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
         style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''>RESULTS:<o:p></o:p></span></b></p>
-        """ + f"""
-
-        <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''>Following an extensive examination,
-        the outcomes of the genetic analysis are that you have been diagnosed with <strong>{disorder.lower()}</strong> which means as follows:<o:p></o:p></span></p>
-
-        <p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
-        lang=EN-GB style='font-family:'Noto Sans Arabic';mso-fareast-font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''><span style='mso-list:Ignore'>&#9679;<span
-        style='font:7.0pt 'Times New Roman''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span></span><![endif]><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''>Genetic Markers: {genetic_markers}<o:p></o:p></span></p>
-
-        <p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
-        lang=EN-GB style='font-family:'Noto Sans Arabic';mso-fareast-font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''><span style='mso-list:Ignore'>&#9679;<span
-        style='font:7.0pt 'Times New Roman''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span></span><![endif]><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''>Risk Factors: {risk_factors}<o:p></o:p></span></p>
-
-        <p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
-        lang=EN-GB style='font-family:'Noto Sans Arabic';mso-fareast-font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''><span style='mso-list:Ignore'>&#9679;<span
-        style='font:7.0pt 'Times New Roman''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span></span></span><![endif]><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''>Recommendations: {recommendations}<o:p></o:p></span></p>
-
-        <p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-GB
-        style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></p>
-
-        <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
-        style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''>INTERPRETATION:<o:p></o:p></span></b></p>
-
-        <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''>It is crucial to interpret these
-        results with caution. The information obtained is not deterministic but
-        provides valuable insights into potential genetic predispositions. These
-        findings should be discussed in consultation with a healthcare professional
-        specializing in genetics to formulate an appropriate plan for further
-        evaluation or monitoring.<o:p></o:p></span></p>
-
-        <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></p>
-
-        <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
-        style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''>DISCUSSION:<o:p></o:p></span></b></p>
-
-        <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''>Our team is available to discuss the
-        results in detail, address any questions or concerns you may have, and provide
-        guidance on the implications of the findings. We recommend scheduling a
-        follow-up appointment with a healthcare professional to ensure a comprehensive
-        understanding of the results and to explore any necessary next steps.<o:p></o:p></span></p>
-
-        <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></p>
-
-        <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
-        style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''>PATTERNS:</span></b><span
-        lang=EN-GB style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic';
-        mso-bidi-font-weight:bold'><br>
-        In the context of genetic analysis using artificial intelligence (AI), patterns
-        refer to recurring trends or structures in genetic data. During the AI training
-        phase, the model learns patterns associated with genetic disorders from a
-        dataset. When analysing new genetic samples, the model looks for similar
-        patterns it learned during training to predict or detect the likelihood of a
-        genetic disorder in the individual. The accuracy of the model depends on the
-        quality of training data and the effectiveness of the machine learning
-        algorithms.<o:p></o:p></span></p>
-
-        <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic';mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
-
-        <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic';mso-bidi-font-weight:bold'>You will
-        find the report of your sample in the next page, highlighted the anomalies that
-        reconducted to the genetic disorder. </span><b style='mso-bidi-font-weight:
-        normal'><span lang=EN-GB style='font-family:'Noto Sans Arabic';mso-bidi-font-family:
-        'Noto Sans Arabic''><o:p></o:p></span></b></p>
-
-        <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
-        style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></b></p>
         
-        {patterns}
+        """ 
+    )
 
-        <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
-        mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></p>
+    for k,j in enumerate(genetic_markers):
+        if k > 0:
+            new_lines.append(f"""
+                 <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+                mso-bidi-font-family:'Noto Sans Arabic''>Furthermore you also have been diagnosed with <strong>{disorder[k].lower()}</strong> which means as follows:<o:p></o:p></span></p>          
+            """)
+        else:
+            new_lines.append(f"""
+                <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+                mso-bidi-font-family:'Noto Sans Arabic''>Following an extensive examination,
+                the outcomes of the genetic analysis are that you have been diagnosed with <strong>{disorder[k].lower()}</strong> which means as follows:<o:p></o:p></span></p>                 
+            """)
 
-        <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
-        style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''>CONCLUSION:</span></b><span
-        lang=EN-GB style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic';
-        mso-bidi-font-weight:bold'><br>
-        Your health is paramount to us, and we remain committed to supporting you throughout this 
-        process. Please do not hesitate to contact our team if you require additional
-        information or wish to schedule a consultation. Thank you for your participation
-        in this groundbreaking research endeavor. Your contribution has significantly
-        contributed to the advancement of genetic medicine.<o:p></o:p></span></p>
+        new_lines.append(f"""
+            <p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+            lang=EN-GB style='font-family:'Noto Sans Arabic';mso-fareast-font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''><span style='mso-list:Ignore'>&#9679;<span
+            style='font:7.0pt 'Times New Roman''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><![endif]><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''>Genetic Markers: {genetic_markers[k]}<o:p></o:p></span></p>
 
-        <p style='margin:0cm'><span lang=EN-US style='font-size:13.0pt;font-family:
-        'Noto Sans Arabic';color:black;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+            <p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+            lang=EN-GB style='font-family:'Noto Sans Arabic';mso-fareast-font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''><span style='mso-list:Ignore'>&#9679;<span
+            style='font:7.0pt 'Times New Roman''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><![endif]><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''>Risk Factors: {risk_factors[k]}<o:p></o:p></span></p>
 
-        <p style='margin:0cm'><span lang=EN-GB style='font-size:13.0pt;font-family:
-        'Noto Sans Arabic';color:black;mso-ansi-language:EN-GB'>Sincerely,</span><span
-        lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+            <p class=MsoNormal style='margin-left:36.0pt;text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+            lang=EN-GB style='font-family:'Noto Sans Arabic';mso-fareast-font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''><span style='mso-list:Ignore'>&#9679;<span
+            style='font:7.0pt 'Times New Roman''>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span></span></span><![endif]><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''>Recommendations: {recommendations[k]}<o:p></o:p></span></p>
+            """
+        )
 
-        <p style='margin:0cm'><i><span lang=EN-GB style='font-size:13.0pt;font-family:
-        'Noto Sans Arabic';color:black;mso-ansi-language:EN-GB'>The DNAI Team</span></i><span
-        lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+    new_lines.append(f"""
+            <p class=MsoNormal style='margin-left:36.0pt'><span lang=EN-GB
+            style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></p>
 
-        <p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+            <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+            style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''>INTERPRETATION:<o:p></o:p></span></b></p>
 
-        </div>
+            <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''>It is crucial to interpret these
+            results with caution. The information obtained is not deterministic but
+            provides valuable insights into potential genetic predispositions. These
+            findings should be discussed in consultation with a healthcare professional
+            specializing in genetics to formulate an appropriate plan for further
+            evaluation or monitoring.<o:p></o:p></span></p>
 
-        </body>
+            <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></p>
 
-        </html>
+            <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+            style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''>DISCUSSION:<o:p></o:p></span></b></p>
+
+            <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''>Our team is available to discuss the
+            results in detail, address any questions or concerns you may have, and provide
+            guidance on the implications of the findings. We recommend scheduling a
+            follow-up appointment with a healthcare professional to ensure a comprehensive
+            understanding of the results and to explore any necessary next steps.<o:p></o:p></span></p>
+
+            <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></p>
+
+            <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+            style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''>PATTERNS:</span></b><span
+            lang=EN-GB style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic';
+            mso-bidi-font-weight:bold'><br>
+            In the context of genetic analysis using artificial intelligence (AI), patterns
+            refer to recurring trends or structures in genetic data. During the AI training
+            phase, the model learns patterns associated with genetic disorders from a
+            dataset. When analysing new genetic samples, the model looks for similar
+            patterns it learned during training to predict or detect the likelihood of a
+            genetic disorder in the individual. The accuracy of the model depends on the
+            quality of training data and the effectiveness of the machine learning
+            algorithms.<o:p></o:p></span></p>
+
+            <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic';mso-bidi-font-weight:bold'><o:p>&nbsp;</o:p></span></p>
+
+            <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic';mso-bidi-font-weight:bold'>You will
+            find the report of your sample in the next page, highlighted the anomalies that
+            reconducted to the genetic disorder. Highlighted in orange are the the bases that showing no presence of any disease, in yellow representing lactose intolerance, in light blue haemophilia and light green autism </span><b style='mso-bidi-font-weight:
+            normal'><span lang=EN-GB style='font-family:'Noto Sans Arabic';mso-bidi-font-family:
+            'Noto Sans Arabic''><o:p></o:p></span></b></p>
+
+            <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+            style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></b></p>
+            
+            {patterns}
+
+            <p class=MsoNormal><span lang=EN-GB style='font-family:'Noto Sans Arabic';
+            mso-bidi-font-family:'Noto Sans Arabic''><o:p>&nbsp;</o:p></span></p>
+
+            <p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+            style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic''>CONCLUSION:</span></b><span
+            lang=EN-GB style='font-family:'Noto Sans Arabic';mso-bidi-font-family:'Noto Sans Arabic';
+            mso-bidi-font-weight:bold'><br>
+            Your health is paramount to us, and we remain committed to supporting you throughout this 
+            process. Please do not hesitate to contact our team if you require additional
+            information or wish to schedule a consultation. Thank you for your participation
+            in this groundbreaking research endeavor. Your contribution has significantly
+            contributed to the advancement of genetic medicine.<o:p></o:p></span></p>
+
+            <p style='margin:0cm'><span lang=EN-US style='font-size:13.0pt;font-family:
+            'Noto Sans Arabic';color:black;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+            <p style='margin:0cm'><span lang=EN-GB style='font-size:13.0pt;font-family:
+            'Noto Sans Arabic';color:black;mso-ansi-language:EN-GB'>Sincerely,</span><span
+            lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+            <p style='margin:0cm'><i><span lang=EN-GB style='font-size:13.0pt;font-family:
+            'Noto Sans Arabic';color:black;mso-ansi-language:EN-GB'>The DNAI Team</span></i><span
+            lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+
+            <p class=MsoNormal><span lang=EN-GB><o:p>&nbsp;</o:p></span></p>
+
+            </div>
+
+            </body>
+
+            </html>
 
     """
     )

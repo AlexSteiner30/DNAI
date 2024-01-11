@@ -81,20 +81,25 @@ def predict(sequence, count):
 
     for i, j in enumerate(sequence):
         if torch.argmax(ouput) != 0:
-            if sequence[i] == activation_maps[0][1][i] == True and ouput[0][1].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+            if sequence[i] == activation_maps[0][1][i] == True and (ouput[0][1].item() > 10 or ouput[0][1].item() == torch.argmax(ouput)):
+                print(1)
                 patterns = patterns + f"<mark style='background-color: yellow;'>{convertToString(sequence[i])}</mark>"
 
-            if sequence[i] == activation_maps[0][2][i] == True and ouput[0][2].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+            elif sequence[i] == activation_maps[0][2][i] == True and (ouput[0][2].item() > 10 or ouput[0][2].item() == torch.argmax(ouput)):
+                print(2)
                 patterns = patterns + f"<mark style='background-color: lightgreen;'>{convertToString(sequence[i])}</mark>"
 
-            if sequence[i] == activation_maps[0][3][i] == True and ouput[0][3].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+            elif sequence[i] == activation_maps[0][3][i] == True and (ouput[0][3].item() > 10 or ouput[0][3].item() == torch.argmax(ouput)):
+                print(3)
                 patterns = patterns + f"<mark style='background-color: lightblue;'>{convertToString(sequence[i])}</mark>"
             
             else:
+                print(4)
                 patterns = patterns + f"{convertToString(sequence[i])}"
 
         else:
-            if sequence[i] == activation_maps[0][0][i] == True and ouput[0][0].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+            print(0)
+            if sequence[i] == activation_maps[0][0][i] == True and (ouput[0][0].item() > 10 or ouput[0][0].item() == torch.argmax(ouput)):
                 patterns = patterns + f"<mark style='background-color: orange;'>{convertToString(sequence[i])}</mark>"
             
             else:
@@ -102,11 +107,12 @@ def predict(sequence, count):
 
     if ouput[0][1].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
         results.append("lactose intolerance")
-    if ouput[0][2].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
-        results.append("2")
-    if ouput[0][3].item() > 10 or ouput[0][1].item() == torch.argmax(ouput):
+        print(1)
+    if ouput[0][2].item() > 10 or ouput[0][2].item() == torch.argmax(ouput):
+        results.append("haemophilia")
+    if ouput[0][3].item() > 10 or ouput[0][3].item() == torch.argmax(ouput):
         results.append("autism")
-    else:
+    if ouput[0][1].item() == torch.argmax(ouput):
         results = ["no diseases found in the provided DNA sequence."]
 
     patterns = patterns + "<o:p></o:p></span></p>"

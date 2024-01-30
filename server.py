@@ -29,4 +29,4 @@ def download():
     return send_file(f"static/analysis/analysis_{str(count)}.pdf", as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port="8080")
+    app.run(debug=True, host='0.0.0.0', port=8080)
